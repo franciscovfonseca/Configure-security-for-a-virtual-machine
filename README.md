@@ -44,7 +44,7 @@ In this task, you will create a virtual machine to test the application security
 
 ◻️ In Categories, select **Compute**, and then select **Virtual machine**.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/4fe8c6ca-024d-4eb8-9803-c21b2f67112b" height="50%" width="50%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/4fe8c6ca-024d-4eb8-9803-c21b2f67112b" height="40%" width="40%" alt="9"/><br />
 <br>
 
 <br>

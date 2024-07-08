@@ -34,162 +34,204 @@ A NSG allows you to specify **Firewall Rules** to Allow or Deny Access through P
 <h2>1️⃣ Create an Azure Virtual Machine</h2>
 <br>
 
-In this task, you will use the Azure portal to create a web app, and then you will test the app by using its public URL.
+In this task, you will create a virtual machine to test the application security.
 
 <br>
 
-✅ If necessary, sign in to **🖥️ Windows 10 - RDP Jumpbox** as ***LabUser*** using ***Passw0rd!*** as the password.
-
-- 💡 Select the ***Type Text*** icon to type the associated text into the virtual machine at the current cursor location.
-<br>
+◻️ On the Azure portal menu, select **Create a resource** to display the Azure Marketplace.
 
 <br>
 
-✅ Open Microsoft Edge, and then sign in to http://portal.azure.com as ***admin-42241754*** using ***cDeC3e!0D@*** as the password.
-
-- If you receive an error, select **Try again**.
-<br>
-
-<br>
-
-✅ If prompted to take a tour of the Azure portal, select **Maybe later**.
-
-<br>
-
-✅ In the Azure portal, in the upper-left corner, select the **Show portal** menu icon.
+◻️ In Categories, select **Compute**, and then select **Virtual machine**.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-Application-Insights-for-a-web-app/assets/172988970/9141f9ba-6014-40b3-9102-325b18b3edc3" height="8%" width="8%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/4fe8c6ca-024d-4eb8-9803-c21b2f67112b" height="50%" width="50%" alt="9"/><br />
 <br>
 
 <br>
 
-✅ On the Azure portal menu, select **Create a resource** to display the Azure Marketplace.
+◻️ On the Create a virtual machine blade, on the Basics page:
+<br>
+
+- in Resource group, select **corp-datalod42241754**
+
+- in Virtual machine name, enter ***WebVM1***
+
+- and then in Region, ensure that **(US) East US** is selected
 
 <br>
 
-✅ In the Popular Azure services list, select **Web App**.
+<br>
+
+◻️ In Image, select **Windows Server 2019 Datacenter - Gen2**.
 
 <br>
 
-✅ On the Create Web App blade, on the Basics page, in Resource Group, select **corp-datalod42241754**, and then in Name, enter ***web42241754***.
+◻️ In Size, select **See all sizes**.
 
 <br>
 
-✅ In Publish, ensure that **Code** is selected, in Runtime stack, select **ASP.NET V4.8** (or the most recent version), in Operating System, ensure that **Windows** is selected, and then in Region, select **East US**.
+◻️ On the Select a VM size page, in VM Size, select ***B2ms***, and then select **Select**.
 
 <br>
 
-✅ In App Service Plan, in Sku and size, select **Explore pricing plans**.
+◻️ On the Basics page, in Username, enter ***AzureAdmin***, and then in Password and Confirm password, enter ***Az!42241754!***.
+<br>
+<br>
+
+- 💡 You can press **Tab** to move between fields.
+<br>
 
 <br>
 
-✅ On the Select App Service Pricing Plan blade, locate and select **Standard S1**, and then select **Select**.
+◻️ In Public inbound ports, select **None**, and then select **Next : Disks**.
+
+<br>
+
+◻️ On the Disks page, in OS disk type, select **Standard HDD**, and then select **Next : Networking**.
+
+<br>
+
+◻️ On the Networking page, review the default values, and then select **Next : Management**.
+
+<br>
+
+◻️ On the Management page, in Boot diagnostics, select **Disable**.
+
+<br>
+
+◻️ Select **Review + create**, and then review the specifications of the virtual machine.
+
+<br>
+
+◻️ Select **Create** to deploy the virtual machine.
+<br>
+<br>
+
+- The deployment will take approximately 3–5 minutes. You can continue to the next task while you wait for the deployment to complete.
+<br>
+
+
+<br>
+<br>
+
+<h2>2️⃣ Configure a Network Security Group</h2>
+<br>
+
+In this task, you will configure a network security group.
+
+<br>
+
+◻️ On the Azure portal menu, select All services, select Networking, and then select Network security groups.
+
+<br>
+
+◻️ On the Network security groups page, select WebVM1-nsg.
+<br>
+
+- If the WebVM1-nsg network security group is not listed, refresh the page until it appears.
+
+<br>
+
+◻️ On the WebVM1-nsg Overview page, review the default inbound and outbound security rules for the network security group.
+
+- The default security rules allow network traffic from within the same virtual network and from a load balancer but prevent access from all other sources.
+
+<br>
+
+◻️ On the WebVM1-nsg resource menu, select Inbound security rules, and then on the command bar, select Add to add a rule.
+
+The Add rule option
+
+◻️ On the Add inbound security rule blade, in Destination port ranges, enter 3389, in Name, enter AllowAllRDP, and then select Add to add the new inbound security rule.
+
+- Wait for the new rule to be created.
+
+◻️ On the Inbound security rules page, on the command bar, select Refresh to see the new rule.
+
+◻️ On the Inbound security rules page, on the command bar, select Add to add another rule.
+
+◻️ On the Add inbound security rule blade, in Destination port ranges, enter 80,443, in Name, enter AllowAllWeb, and then select Add.
+
+- Wait for the new rule to be created.
+
+◻️ On the WebVM1-nsg resource menu, select Network interfaces, and then verify that there is a network security group associated to the network interface of WebVM1.
+
+- The network interface name begins with webvm1.
+
+◻️ On the WebVM1-nsg resource menu, select Subnets, and then verify that there are no subnets displayed.
+
+- When a network security group is associated to a subnet, its rules apply to all virtual machines in that subnet. When a network security group is associated to a network interface, its rules only apply to that specific network interface on that virtual machine.
+
+
+
+
+
+◻️ In Categories, select **Compute**, and then select **Virtual machine**.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-Application-Insights-for-a-web-app/assets/172988970/972bd4bf-f6bf-44ab-9a7d-dfd734176bf4" height="30%" width="30%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/4fe8c6ca-024d-4eb8-9803-c21b2f67112b" height="50%" width="50%" alt="9"/><br />
 <br>
 
 <br>
 
-✅ On the Basics page, select **Next: Database**, and then select **Next : Deployment**.
-
+◻️ On the Create a virtual machine blade, on the Basics page:
 <br>
 
-✅ On the Deployment page, in Continuous deployment settings, ensure that **Disable** is selected, and then select **Next : Networking**.
+- in Resource group, select **corp-datalod42241754**
 
-- You will deploy code for the web app in an upcoming task.
-<br>
+- in Virtual machine name, enter ***WebVM1***
 
-<br>
-
-✅ On the Networking page, in Enable network injection, ensure that **Off** is selected, and then select **Next : Monitoring**.
-
-<br>
-
-✅ On the Monitoring page, in Enable Application Insights, ensure that **No** is selected.
-
-- You will enable Application Insights in an upcoming task.
-<br>
-
-<br>
-
-✅ Select **Review + create**, review the configuration, and then select **Create** to deploy the web app.
-
-- The web app deployment will take approximately 1–2 minutes to complete.
-<br>
-
-<br>
-
-✅ When you are presented with a **Your deployment is complete** message, select **Go to resource** to display the web42241754 page.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-Application-Insights-for-a-web-app/assets/172988970/0f02c7cb-79e1-4f76-9deb-f01737e8a31d" height="40%" width="40%" alt="9"/><br />
-<br>
-
-<br>
-
-✅ On the web42241754 page, select the **URL** link to test the deployment.
-
-- You should see the default home page of the web app.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-Application-Insights-for-a-web-app/assets/172988970/609747c5-22d9-4c42-936b-06b42155a050" height="80%" width="80%" alt="9"/><br />
-<br>
-
+- and then in Region, ensure that **(US) East US** is selected
 
 <br>
 
 <br>
 
-<h2>2️⃣ Deploy ASP.NET Code</h2>
-<br>
-
-In this task, you will deploy ASP.NET code to your web app, and then you will test the updated app by using the public URL of the web app.
+◻️ In Image, select **Windows Server 2019 Datacenter - Gen2**.
 
 <br>
 
-✅ On the web42241754 resource menu, in Deployment, select **Deployment Center**.
+◻️ In Size, select **See all sizes**.
 
 <br>
 
-✅ On the Deployment Center page, on the Settings page, select **SCM basic authentication is disabled for your app. Click here to go to your configuration settings to enable**.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-Application-Insights-for-a-web-app/assets/172988970/f6d0500b-d75f-4d22-b103-bce7eb6228eb" height="60%" width="60%" alt="9"/><br />
-<br>
+◻️ On the Select a VM size page, in VM Size, select ***B2ms***, and then select **Select**.
 
 <br>
 
-✅ On the Configuration blade, in Platform settings, in SCM Basic Auth Publishing Credentials, select **On**, and then on the command bar, select **Save**.
-
+◻️ On the Basics page, in Username, enter ***AzureAdmin***, and then in Password and Confirm password, enter ***Az!42241754!***.
+<br>
 <br>
 
-✅ On the Save changes blade, select **Continue**, and then close the **Configuration** blade.
-
-<br>
-
-✅ On the Deployment Center page, on the Settings page, in Source, select **External Git**.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-Application-Insights-for-a-web-app/assets/172988970/3e458bb5-6263-4f5c-9687-b8cb6f64c453" height="50%" width="50%" alt="9"/><br />
+- 💡 You can press **Tab** to move between fields.
 <br>
 
 <br>
 
-✅ In External Git, in Repository, enter ***https://github.com/LODSContent/LODSOC_app-service-web-dotnet-get-started***, in Branch, enter ***main***, and then in Repository Type, ensure that Public is selected.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-Application-Insights-for-a-web-app/assets/172988970/8efa718d-ea02-4fbf-bb91-5582099ac346" height="50%" width="50%" alt="9"/><br />
-<br>
+◻️ In Public inbound ports, select **None**, and then select **Next : Disks**.
 
 <br>
 
-✅ On the command bar, select **Save** to initiate the deployment.
-
-- It will take approximately 1–2 minutes for the new code to fully deploy.
-<br>
+◻️ On the Disks page, in OS disk type, select **Standard HDD**, and then select **Next : Networking**.
 
 <br>
 
-✅ On the web42241754 resource menu, select **Overview**, and then select the **URL** link to display the updated version of the web app.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-Application-Insights-for-a-web-app/assets/172988970/96ebae13-3bfa-47b6-9418-e85755362205" height="80%" width="80%" alt="9"/><br />
+◻️ On the Networking page, review the default values, and then select **Next : Management**.
 
-- If you do not see the updated page, refresh the browser.
+<br>
+
+◻️ On the Management page, in Boot diagnostics, select **Disable**.
+
+<br>
+
+◻️ Select **Review + create**, and then review the specifications of the virtual machine.
+
+<br>
+
+◻️ Select **Create** to deploy the virtual machine.
+<br>
+<br>
+
+- The deployment will take approximately 3–5 minutes. You can continue to the next task while you wait for the deployment to complete.
 <br>
 
 

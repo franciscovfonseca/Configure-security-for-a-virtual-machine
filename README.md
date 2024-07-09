@@ -34,7 +34,8 @@ A NSG allows you to specify **Firewall Rules** to Allow or Deny Access through P
 <h2>1️⃣ Create an Azure Virtual Machine</h2>
 <br>
 
-In this task, you will create a virtual machine to test the application security.
+### ✔️ In this task, you will Create a Virtual Machine to Test the Application Security.
+<br>
 
 <br>
 
@@ -117,7 +118,8 @@ In this task, you will create a virtual machine to test the application security
 <h2>2️⃣ Configure a Network Security Group</h2>
 <br>
 
-In this task, you will configure a network security group.
+### ✔️ In this task, you will Configure a Network Security Group.
+<br>
 
 <br>
 
@@ -185,11 +187,13 @@ In this task, you will configure a network security group.
 <h2>3️⃣ Configure Virtual Machine Security</h2>
 <br>
 
-In this task, you will configure security for a virtual machine.
-1. First, you will connect to the virtual machine.
-2. Next, you will install IIS on the virtual machine by using Windows PowerShell®.
-3. Finally, you will delete the AllowAllRDP inbound port rule for security reasons.
+### ✔️ In this task, you will Configure Security for a Virtual Machine.
+<br>
 
+1. First, you will **Connect to the Virtual Machine**.
+2. Next, you will **Install IIS on the Virtual Machine** by using ***Windows PowerShell®***.
+3. Finally, you will **Delete the AllowAllRDP Inbound Port Rule** for security reasons.
+<br>
 
 <br>
 
@@ -349,7 +353,8 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 <h2>4️⃣ Test Virtual Machine Security</h2>
 <br>
 
-In this task, you will verify that RDP access is no longer allowed but that HTTP access remains.
+### ✔️ In this task, you will Verify that RDP Access is no longer allowed but that HTTP Access remains.
+<br>
 
 <br>
 

@@ -11,7 +11,7 @@
 <h1> Configure Security for a Virtual Machine</h1>
 <br>
 
-In this exercise, you will **Configure Security for a Virtual Machine**.
+In this lab, you will **Configure Security for a Virtual Machine**.
 
 1. First, you will **Create a Virtual Machine**.
 

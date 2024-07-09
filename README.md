@@ -193,7 +193,7 @@ In this task, you will configure security for a virtual machine.
 
 <br>
 
-◻️ On the Azure portal menu, select All resources, and then select the WebVM1 virtual machine.
+◻️ On the Azure portal menu, select **All resources**, and then select the **WebVM1** virtual machine.
 <br>
 
 - If the virtual machine has not deployed yet, refresh the page until it appears in the list.
@@ -201,60 +201,60 @@ In this task, you will configure security for a virtual machine.
 
 <br>
 
-◻️ On the WebVM1 resource menu, in Settings, select Networking.
+◻️ On the WebVM1 resource menu, in Settings, select **Networking**.
 
 <br>
 
-◻️ Review the inbound port rules in the WebVM1-nsg network security group, and then in the AllowAllRDP rule, note the warning icon.
+◻️ Review the inbound port rules in the WebVM1-nsg network security group, and then in the **AllowAllRDP** rule, note the warning icon ⚠️
 <br>
 
 - You will correct the warning in an upcoming task.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/d6482a5a-6292-48aa-893e-a2a731863c95" height="80%" width="80%" alt="9"/><br />
 <br>
 
 <br>
 
-◻️ On the WebVM1 resource menu, select Overview.
+◻️ On the WebVM1 resource menu, select **Overview**.
 
-◻️ On the command bar, select Connect, and then select RDP.
+◻️ On the command bar, select **Connect**, and then select **RDP**.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/cfd8f133-4fec-481d-abee-c7e2dd7edf60" height="40%" width="40%" alt="9"/><br />
 <br>
 
 <br>
 
-◻️ Select Download RDP File.
+◻️ Select **Download RDP File**.
 
 <br>
 
-◻️ Open the RDP file, and then select Connect.
+◻️ Open the RDP file, and then select **Connect**.
 
 <br>
 
-◻️ In the Enter your credentials window, in User name, enter AzureAdmin, in Password, enter Az!42241754!, and then select OK.
+◻️ In the Enter your credentials window, in User name, enter ***AzureAdmin***, in Password, enter ***Az!42241754!***, and then select OK.
 
 <br>
 
-◻️ In the Remote Desktop Connection warning message, select Yes to connect.
+◻️ In the Remote Desktop Connection warning message, select **Yes** to connect.
 
 - You may need to wait for the desktop profile to initialize.
 <br>
 
 <br>
 
-◻️ If prompted to allow network discovery, select No.
+◻️ If prompted to allow network discovery, select **No**.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/03876040-2c93-4a01-bd93-4a2fa84f6e62" height="50%" width="50%" alt="9"/><br />
 <br>
 
 <br>
 
-◻️ Wait for Server Manager to start, and then close Server Manager.
+◻️ Wait for Server Manager to start, and then close **Server Manager**.
 
 <br>
 
-◻️ In the Remote Desktop Connection window, on the Start menu, select Windows PowerShell.
+◻️ In the Remote Desktop Connection window, on the Start menu, select **Windows PowerShell**.
 
 - You may need to scroll down in the Remote Desktop Connection window to see the Windows Start button.
 <br>
@@ -273,7 +273,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 ◻️ Wait for the IIS installation to finish.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/7f39e53b-3f9f-4d22-b6a7-d6fecdbe864f" height="50%" width="50%" alt="9"/><br />
 <br>
 
 <br>
@@ -283,25 +283,25 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 <br>
 
-◻️ Close the Remote Desktop Connection window, and then select OK to disconnect.
+◻️ Close the **Remote Desktop Connection** window, and then select **OK** to disconnect.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/614b0f2f-7518-453c-a241-c12faaf5fbf3" height="60%" width="60%" alt="9"/><br />
 <br>
 
 <br>
 
-◻️ On the WebVM1 resource menu, select Overview, locate the Public IP address, and then type it into the following WebVM1 Public IP Address text box:
+◻️ On the WebVM1 resource menu, select **Overview**, locate the **Public IP address**, and then type it into the following **WebVM1 Public IP Address** text box:
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/a5557e42-7da0-4f6a-b643-987d1830a735" height="40%" width="40%" alt="9"/><br />
 <br>
 
 <br>
 
-◻️ Open a new browser window, and then go to the public IP address of WebVM1 at http://<PublicIP>.
+◻️ Open a new browser window, and then go to the public IP address of WebVM1 at ***http://<PublicIP>***.
 
 - You should see the default IIS web page. This verifies that web traffic has been routed correctly by using a network security group.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/c220e2bf-3f88-4deb-866f-d60f6bf71565" height="60%" width="60%" alt="9"/><br />
 <br>
 
 <br>
@@ -310,7 +310,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 <br>
 
-◻️ On the WebVM1 resource menu, in Settings, select Networking.
+◻️ On the WebVM1 resource menu, in Settings, select **Networking**.
 
 <br>
 
@@ -318,23 +318,23 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 - Note the warning symbol beside the AllowAllRDP rule.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/75e284e8-dd14-4a2a-a274-bf211b40feec" height="60%" width="60%" alt="9"/><br />
 <br>
 
 <br>
 
-◻️ Select the AllowAllRDP inbound port rule to view the specifications of the rule.
+◻️ Select the **AllowAllRDP** inbound port rule to view the specifications of the rule.
 
 ◻️ On the AllowAllRDP blade, review the warning message at the bottom of the page.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/c5d75c22-1f5f-43d8-a167-9be4a60f430a" height="60%" width="60%" alt="9"/><br />
 <br>
 
 <br>
 
-◻️ On the command bar, select Delete, and then when prompted, select Yes to delete the security rule.
+◻️ On the command bar, select **Delete**, and then when prompted, select **Yes** to delete the security rule.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/c8ee4c30-983b-4310-a1df-68c8e49fce4c" height="60%" width="60%" alt="9"/><br />
 <br>
 
 - Wait for the rule to be deleted. It may take a few minutes for the change to take effect.

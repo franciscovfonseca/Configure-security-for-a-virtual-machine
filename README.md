@@ -297,7 +297,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 <br>
 
-◻️ Open a new browser window, and then go to the public IP address of WebVM1 at ***http://<PublicIP>***.
+◻️ Open a new browser window, and then go to the public IP address of WebVM1 at ***http://<*PublicIP*>***.
 
 - You should see the default IIS web page. This verifies that web traffic has been routed correctly by using a network security group.
 <p align="center">
@@ -349,163 +349,38 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 <h2>4️⃣ Test Virtual Machine Security</h2>
 <br>
 
-In this task, you will configure security for a virtual machine.
-1. First, you will connect to the virtual machine.
-2. Next, you will install IIS on the virtual machine by using Windows PowerShell®.
-3. Finally, you will delete the AllowAllRDP inbound port rule for security reasons.
-
+In this task, you will verify that RDP access is no longer allowed but that HTTP access remains.
 
 <br>
 
-◻️ On the Azure portal menu, select All resources, and then select the WebVM1 virtual machine.
-<br>
-
-- If the virtual machine has not deployed yet, refresh the page until it appears in the list.
-<br>
+◻️ On the WebVM1 resource menu, select **Overview**, select Connect, and then select **RDP**.
 
 <br>
 
-◻️ On the WebVM1 resource menu, in Settings, select Networking.
+◻️ Select **Download RDP File**, open the RDP file, and then select **Connect**.
 
-<br>
-
-◻️ Review the inbound port rules in the WebVM1-nsg network security group, and then in the AllowAllRDP rule, note the warning icon.
-<br>
-
-- You will correct the warning in an upcoming task.
+- This should now fail with an error. If it does not, cancel, and then try again. The deleted rule may take a few minutes to take effect.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/397621da-1638-45dc-b67b-827e05978d27" height="60%" width="60%" alt="9"/><br />
 <br>
 
 <br>
 
-◻️ On the WebVM1 resource menu, select Overview.
+◻️ Select **OK** to dismiss the error message.
 
-◻️ On the command bar, select Connect, and then select RDP.
+<br>
+
+◻️ Open a new browser window, and then go to the public IP address of WebVM1 at ***http://<*PublicIP*>***.
+
+- You should see the default IIS web page again. The AllowAllWeb rule remains in effect.
 <p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
-<br>
-
-<br>
-
-◻️ Select Download RDP File.
-
-<br>
-
-◻️ Open the RDP file, and then select Connect.
-
-<br>
-
-◻️ In the Enter your credentials window, in User name, enter AzureAdmin, in Password, enter Az!42241754!, and then select OK.
-
-<br>
-
-◻️ In the Remote Desktop Connection warning message, select Yes to connect.
-
-- You may need to wait for the desktop profile to initialize.
-<br>
-
-<br>
-
-◻️ If prompted to allow network discovery, select No.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
-<br>
-
-<br>
-
-◻️ Wait for Server Manager to start, and then close Server Manager.
-
-<br>
-
-◻️ In the Remote Desktop Connection window, on the Start menu, select Windows PowerShell.
-
-- You may need to scroll down in the Remote Desktop Connection window to see the Windows Start button.
-<br>
-
-<br>
-
-◻️ At the PowerShell command prompt, run the following command to install IIS on the virtual machine:
-
-
-```commandline
-Install-WindowsFeature -name Web-Server -IncludeManagementTools
-```
-<br>
-
-
-- You can use the Type Text feature to type the command in the Windows PowerShell window, and then press Enter to run the command.
-<br>
-
-<br>
-
-◻️ Wait for the IIS installation to finish.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
-<br>
-
-<br>
-
-- The IIS installation will take approximately 1–2 minutes.
-<br>
-
-<br>
-
-◻️ Close the Remote Desktop Connection window, and then select OK to disconnect.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
-<br>
-
-<br>
-
-◻️ On the WebVM1 resource menu, select Overview, locate the Public IP address, and then type it into the following WebVM1 Public IP Address text box:
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
-<br>
-
-<br>
-
-◻️ Open a new browser window, and then go to the public IP address of WebVM1 at http://<PublicIP>.
-
-- You should see the default IIS web page. This verifies that web traffic has been routed correctly by using a network security group.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
+<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/054418fc-c029-4eeb-a956-d1d70be23ce8" height="60%" width="60%" alt="9"/><br />
 <br>
 
 <br>
 
 ◻️ Close the browser window that contains the default IIS web page.
 
-<br>
-
-◻️ On the WebVM1 resource menu, in Settings, select Networking.
-
-<br>
-
-◻️ Review the inbound port rules.
-
-- Note the warning symbol beside the AllowAllRDP rule.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
-<br>
-
-<br>
-
-◻️ Select the AllowAllRDP inbound port rule to view the specifications of the rule.
-
-◻️ On the AllowAllRDP blade, review the warning message at the bottom of the page.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
-<br>
-
-<br>
-
-◻️ On the command bar, select Delete, and then when prompted, select Yes to delete the security rule.
-<p align="center">
-<img src="https://github.com/franciscovfonseca/Configure-security-for-a-virtual-machine/assets/172988970/37a5f21f-6763-4ee0-81a6-8868ab21e5af" height="15%" width="15%" alt="9"/><br />
-<br>
-
-- Wait for the rule to be deleted. It may take a few minutes for the change to take effect.
 
 
 <br>

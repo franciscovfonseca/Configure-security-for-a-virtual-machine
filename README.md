@@ -55,7 +55,7 @@ A NSG allows you to specify **Firewall Rules** to Allow or Deny Access through P
 
 - in Resource group, select **corp-datalod42241754**
 
-- in Virtual machine name, enter ***WebVM1***
+- in Virtual machine name, enter ***🆃 WebVM1***
 
 - and then in Region, ensure that **(US) East US** is selected
 
@@ -71,11 +71,11 @@ A NSG allows you to specify **Firewall Rules** to Allow or Deny Access through P
 
 <br>
 
-◻️ On the Select a VM size page, in VM Size, select ***B2ms***, and then select **Select**.
+◻️ On the Select a VM size page, in VM Size, select ***🆃 B2ms***, and then select **Select**.
 
 <br>
 
-◻️ On the Basics page, in Username, enter ***AzureAdmin***, and then in Password and Confirm password, enter ***Az!42241754!***.
+◻️ On the Basics page, in Username, enter ***🆃 AzureAdmin***, and then in Password and Confirm password, enter ***🆃 Az!42241754!***.
 <br>
 <br>
 
@@ -146,7 +146,7 @@ A NSG allows you to specify **Firewall Rules** to Allow or Deny Access through P
 
 <br>
 
-◻️ On the Add inbound security rule blade, in Destination port ranges, enter ***3389***, in Name, enter ***AllowAllRDP***, and then select **Add** to add the new inbound security rule.
+◻️ On the Add inbound security rule blade, in Destination port ranges, enter ***🆃 3389***, in Name, enter ***🆃 AllowAllRDP***, and then select **Add** to add the new inbound security rule.
 
 - ⚠️ Wait for the new rule to be created.
 <br>
@@ -161,7 +161,7 @@ A NSG allows you to specify **Firewall Rules** to Allow or Deny Access through P
 
 <br>
 
-◻️ On the Add inbound security rule blade, in Destination port ranges, enter ***80,443***, in Name, enter ***AllowAllWeb***, and then select **Add**.
+◻️ On the Add inbound security rule blade, in Destination port ranges, enter ***🆃 80,443***, in Name, enter ***🆃 AllowAllWeb***, and then select **Add**.
 
 - ⚠️ Wait for the new rule to be created.
 <br>
@@ -170,7 +170,7 @@ A NSG allows you to specify **Firewall Rules** to Allow or Deny Access through P
 
 ◻️ On the WebVM1-nsg resource menu, select **Network interfaces**, and then verify that there is a network security group associated to the network interface of **WebVM1**.
 
-- The network interface name begins with ***webvm1***.
+- The network interface name begins with ***🆃 webvm1***.
 <br>
 
 <br>
@@ -236,7 +236,7 @@ A NSG allows you to specify **Firewall Rules** to Allow or Deny Access through P
 
 <br>
 
-◻️ In the Enter your credentials window, in User name, enter ***AzureAdmin***, in Password, enter ***Az!42241754!***, and then select OK.
+◻️ In the Enter your credentials window, in User name, enter ***🆃 AzureAdmin***, in Password, enter ***🆃 Az!42241754!***, and then select OK.
 
 <br>
 
@@ -301,7 +301,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 <br>
 
-◻️ Open a new browser window, and then go to the public IP address of WebVM1 at ***http://<*PublicIP*>***.
+◻️ Open a new browser window, and then go to the public IP address of WebVM1 at ***🆃 http://<*PublicIP*>***.
 
 - You should see the default IIS web page. This verifies that web traffic has been routed correctly by using a network security group.
 <p align="center">
@@ -375,7 +375,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 <br>
 
-◻️ Open a new browser window, and then go to the public IP address of WebVM1 at ***http://<*PublicIP*>***.
+◻️ Open a new browser window, and then go to the public IP address of WebVM1 at ***🆃 http://<*PublicIP*>***.
 
 - You should see the default IIS web page again. The AllowAllWeb rule remains in effect.
 <p align="center">
